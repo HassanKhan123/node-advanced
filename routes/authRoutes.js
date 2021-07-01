@@ -4,8 +4,8 @@ module.exports = app => {
   app.get(
     '/auth/google',
     passport.authenticate('google', {
-      scope: ['profile', 'email']
-    })
+      scope: ['profile', 'email'],
+    }),
   );
 
   app.get(
@@ -13,7 +13,7 @@ module.exports = app => {
     passport.authenticate('google'),
     (req, res) => {
       res.redirect('/blogs');
-    }
+    },
   );
 
   app.get('/auth/logout', (req, res) => {
@@ -22,6 +22,10 @@ module.exports = app => {
   });
 
   app.get('/api/current_user', (req, res) => {
-    res.send(req.user);
+    try {
+      res.send(req.user);
+    } catch (error) {
+      console.log('ERR=========', error.message);
+    }
   });
 };
