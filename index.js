@@ -8,6 +8,7 @@ const keys = require('./config/keys');
 require('./models/User');
 require('./models/Blog');
 require('./services/passport');
+require('./services/cache');
 
 mongoose.connect(
   'mongodb+srv://devhassan123:devhassan123@cluster0.csxi3.mongodb.net/db?retryWrites=true&w=majority',
