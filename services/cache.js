@@ -34,6 +34,6 @@ mongoose.Query.prototype.exec = async function () {
 
   const result = await exec.apply(this, arguments);
   console.log('RES=======', result);
-  client.set(key, JSON.stringify(result));
+  client.set(key, JSON.stringify(result), 'EX', 10);
   return result;
 };
