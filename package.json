@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/jest": "^26.0.24",
     "aws-sdk": "^2.188.0",
     "body-parser": "^1.17.2",
     "concurrently": "^3.5.0",
