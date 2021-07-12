@@ -11,4 +11,5 @@ test('we can launch a browser', async () => {
     headless: false,
   });
   const page = browser.newPage();
+  await (await page).goto('localhost:3000');
 });
